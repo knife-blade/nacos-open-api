@@ -31,7 +31,7 @@ public class RestTemplateConfig {
                 .setConnectTimeout(restTemplateProperty.getConnectTimeout())
                 .setReadTimeout(restTemplateProperty.getReadTimeout())
                 // 响应异常处理。应用场景：响应状态200是正常，可以做统一的非200响应码的拦截
-                // .errorHandler(ResponseErrorHandler errorHandler)
+                .errorHandler(ResponseErrorHandler errorHandler)
                 // 设置请求拦截。应用场景：添加一些全局的请求头等。可创建多个，执行顺序和list中对象的顺序一致。
                 // .interceptors(List<ClientHttpRequestInterceptor> interceptors)
                 // 设置信息转换对象。应用场景：设置一些编码格式、数据类型、json/xml等的类型转换器等。
