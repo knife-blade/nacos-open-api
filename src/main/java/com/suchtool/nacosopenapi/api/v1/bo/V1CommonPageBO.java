@@ -1,9 +1,9 @@
-package com.suchtool.nacosopenapi.api.bo;
+package com.suchtool.nacosopenapi.api.v1.bo;
 
 import lombok.Data;
 
 @Data
-public class CommonPageBO {
+public class V1CommonPageBO {
     private Integer pageNo;
 
     private Integer pageSize = 10;

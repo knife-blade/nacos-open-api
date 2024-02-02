@@ -1,10 +1,10 @@
-package com.suchtool.nacosopenapi.api.constant;
+package com.suchtool.nacosopenapi.api.v1.constant;
 
 import lombok.Getter;
 import org.springframework.http.HttpMethod;
 
 @Getter
-public enum NacosOpenApiV1UrlEnum {
+public enum V1NacosOpenApiUrlEnum {
     LOGIN(HttpMethod.POST, "nacos/v1/auth/users/login", false),
     QUERY_ALL_NAMESPACES(HttpMethod.GET, "nacos/v1/console/namespaces", true),
     QUERY_SERVICE(HttpMethod.GET, "nacos/v1/ns/catalog/services", false),
@@ -20,7 +20,7 @@ public enum NacosOpenApiV1UrlEnum {
      */
     private final Boolean wrap;
 
-    NacosOpenApiV1UrlEnum(HttpMethod httpMethod, String url, Boolean wrap) {
+    V1NacosOpenApiUrlEnum(HttpMethod httpMethod, String url, Boolean wrap) {
         this.httpMethod = httpMethod;
         this.url = url;
         this.wrap = wrap;
