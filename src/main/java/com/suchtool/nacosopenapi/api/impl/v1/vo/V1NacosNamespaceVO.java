@@ -1,9 +1,9 @@
-package com.suchtool.nacosopenapi.api.v1.vo;
+package com.suchtool.nacosopenapi.api.impl.v1.vo;
 
 import lombok.Data;
 
 @Data
-public class V1NamespaceVO {
+public class V1NacosNamespaceVO {
     private String namespace;
 
     private String namespaceShowName;

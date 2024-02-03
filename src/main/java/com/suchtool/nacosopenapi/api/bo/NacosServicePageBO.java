@@ -1,11 +1,11 @@
-package com.suchtool.nacosopenapi.api.v1.bo;
+package com.suchtool.nacosopenapi.api.bo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class V1ServicePageBO extends V1CommonPageBO {
+public class NacosServicePageBO extends NacosCommonPageBO {
     private Boolean hasIpCount = true;
 
     private Boolean withInstances = false;
@@ -14,5 +14,5 @@ public class V1ServicePageBO extends V1CommonPageBO {
 
     private String groupNameParam = "";
 
-    private String namespaceId = "";
+    private String namespaceId;
 }

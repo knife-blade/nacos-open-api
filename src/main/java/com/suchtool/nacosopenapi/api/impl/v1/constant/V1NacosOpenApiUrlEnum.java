@@ -1,4 +1,4 @@
-package com.suchtool.nacosopenapi.api.v1.constant;
+package com.suchtool.nacosopenapi.api.impl.v1.constant;
 
 import lombok.Getter;
 import org.springframework.http.HttpMethod;

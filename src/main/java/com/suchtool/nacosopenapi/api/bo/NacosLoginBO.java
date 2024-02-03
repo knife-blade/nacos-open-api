@@ -1,9 +1,9 @@
-package com.suchtool.nacosopenapi.api.v1.bo;
+package com.suchtool.nacosopenapi.api.bo;
 
 import lombok.Data;
 
 @Data
-public class V1LoginBO {
+public class NacosLoginBO {
     private String username;
 
     private String password;

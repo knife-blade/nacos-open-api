@@ -1,11 +1,11 @@
-package com.suchtool.nacosopenapi.api.v1.vo;
+package com.suchtool.nacosopenapi.api.vo;
 
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class V1ServiceQueryVO {
+public class NacosServiceVO {
     private Integer count;
 
     private List<ServiceList> serviceList;

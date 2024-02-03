@@ -1,9 +1,9 @@
-package com.suchtool.nacosopenapi.api.v1.vo;
+package com.suchtool.nacosopenapi.api.vo;
 
 import lombok.Data;
 
 @Data
-public class V1CommonVO<T> {
+public class NacosCommonVO<T> {
     private String code;
 
     private Object message;

@@ -1,11 +1,11 @@
-package com.suchtool.nacosopenapi.api.v1.bo;
+package com.suchtool.nacosopenapi.api.impl.v1.bo;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class V1InstancePageBO extends V1CommonPageBO {
+public class V1NacosInstancePageBO extends V1NacosCommonPageBO {
     private String serviceName;
 
     private String clusterName = "DEFAULT";

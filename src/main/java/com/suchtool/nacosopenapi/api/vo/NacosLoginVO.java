@@ -1,9 +1,9 @@
-package com.suchtool.nacosopenapi.api.v1.vo;
+package com.suchtool.nacosopenapi.api.vo;
 
 import lombok.Data;
 
 @Data
-public class V1LoginVO {
+public class NacosLoginVO {
     private String accessToken;
 
     private Integer tokenTtl;
