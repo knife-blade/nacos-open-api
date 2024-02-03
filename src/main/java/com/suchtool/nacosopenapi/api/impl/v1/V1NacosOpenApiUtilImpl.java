@@ -47,7 +47,7 @@ public class V1NacosOpenApiUtilImpl implements NacosOpenApiUtil {
     @Override
     public List<NacosNamespaceVO> queryAllNamespace() {
         V1NacosCommonVO<?> v1NacosCommonVO = doRequest(V1NacosOpenApiUrlEnum.QUERY_ALL_NAMESPACES,
-                null, V1NacosCommonVO.class, false);
+                null, V1NacosCommonVO.class, true);
         Object data = v1NacosCommonVO.getData();
         String jsonString = JsonUtil.toJsonString(data);
 
@@ -56,8 +56,8 @@ public class V1NacosOpenApiUtilImpl implements NacosOpenApiUtil {
 
     @Override
     public List<NacosServiceVO> queryService(NacosServicePageBO nacosServicePageBO) {
-        V1NacosServiceVO v1NacosServiceVO = doRequest(V1NacosOpenApiUrlEnum.QUERY_ALL_NAMESPACES,
-                nacosServicePageBO, V1NacosServiceVO.class, false);
+        V1NacosServiceVO v1NacosServiceVO = doRequest(V1NacosOpenApiUrlEnum.QUERY_SERVICE,
+                nacosServicePageBO, V1NacosServiceVO.class, true);
         List<V1NacosServiceVO.ServiceList> serviceList = v1NacosServiceVO.getServiceList();
 
         return BeanUtil.copy(serviceList, NacosServiceVO.class);
@@ -65,8 +65,8 @@ public class V1NacosOpenApiUtilImpl implements NacosOpenApiUtil {
 
     @Override
     public List<NacosInstanceVO> queryInstance(NacosInstancePageBO nacosInstancePageBO) {
-        V1NacosInstanceVO v1NacosInstanceVO = doRequest(V1NacosOpenApiUrlEnum.QUERY_ALL_NAMESPACES,
-                nacosInstancePageBO, V1NacosInstanceVO.class, false);
+        V1NacosInstanceVO v1NacosInstanceVO = doRequest(V1NacosOpenApiUrlEnum.QUERY_INSTANCE,
+                nacosInstancePageBO, V1NacosInstanceVO.class, true);
         List<V1NacosInstanceVO.InstanceVO> instanceVOList = v1NacosInstanceVO.getInstanceVOList();
 
         return BeanUtil.copy(instanceVOList, NacosInstanceVO.class);
@@ -88,11 +88,12 @@ public class V1NacosOpenApiUtilImpl implements NacosOpenApiUtil {
 
         String url = HttpUtil.joinUrl(Arrays.asList(nacosServerProperty.getServerAddr(),
                 v1NacosOpenApiUrlEnum.getUrl()));
+        url = HttpUtil.buildUrlWithParams(url, paramList);
 
         if (HttpMethod.GET.equals(v1NacosOpenApiUrlEnum.getHttpMethod())) {
-            return restTemplate.getForObject(url, cls, paramList.toArray());
+            return restTemplate.getForObject(url, cls);
         } else if (HttpMethod.POST.equals(v1NacosOpenApiUrlEnum.getHttpMethod())) {
-            return restTemplate.postForObject(url, null, cls, paramList.toArray());
+            return restTemplate.postForObject(url, null, cls);
         } else {
             return null;
         }

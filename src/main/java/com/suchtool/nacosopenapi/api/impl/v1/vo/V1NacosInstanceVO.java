@@ -9,7 +9,7 @@ import java.util.List;
 public class V1NacosInstanceVO {
     private Integer count;
 
-    @JsonProperty("instance")
+    @JsonProperty("list")
     private List<InstanceVO> instanceVOList;
 
     @Data

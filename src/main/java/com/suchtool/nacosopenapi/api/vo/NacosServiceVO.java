@@ -6,24 +6,16 @@ import java.util.List;
 
 @Data
 public class NacosServiceVO {
-    private Integer count;
+    private String name;
 
-    private List<ServiceList> serviceList;
+    private String groupName;
 
-    @Data
-    public static class ServiceList {
-        private String name;
+    private Integer clusterCount;
 
-        private String groupName;
+    private Integer ipCount;
 
-        private Integer clusterCount;
+    private Integer healthyInstanceCount;
 
-        private Integer ipCount;
-
-        private Integer healthyInstanceCount;
-
-        private String triggerFlag;
-
-    }
+    private String triggerFlag;
 
 }
