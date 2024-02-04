@@ -2,15 +2,17 @@ package com.suchtool.nacosopenapi.api.vo;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 @Data
 public class NacosInstanceVO {
-    private Long instanceId;
+    private String instanceId;
 
     private String ip;
 
     private Integer port;
 
-    private Integer weight;
+    private BigDecimal weight;
 
     private Boolean healthy;
 

@@ -3,6 +3,7 @@ package com.suchtool.nacosopenapi.api.impl.v1.vo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Data
@@ -14,13 +15,13 @@ public class V1NacosInstanceVO {
 
     @Data
     public static class InstanceVO {
-        private Long instanceId;
+        private String instanceId;
 
         private String ip;
 
         private Integer port;
 
-        private Integer weight;
+        private BigDecimal weight;
 
         private Boolean healthy;
 
