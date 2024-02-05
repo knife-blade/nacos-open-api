@@ -5,6 +5,7 @@ import com.suchtool.nacosopenapi.api.NacosOpenApiUtil;
 import com.suchtool.nacosopenapi.api.impl.token.NacosOpenApiTokenUtilImpl;
 import com.suchtool.nacosopenapi.api.impl.v1.V1NacosOpenApiUtilImpl;
 import com.suchtool.nacosopenapi.property.NacosOpenApiProperty;
+import com.suchtool.nacosopenapi.runner.NacosAutomaticLoginRunner;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +22,11 @@ public class NacosOpenApiConfiguration  {
     @Bean("suchtool.nacosopenapi.nacosOpenApiTokenUtil")
     public NacosOpenApiTokenUtil nacosOpenApiTokenUtil() {
         return new NacosOpenApiTokenUtilImpl();
+    }
+
+    @Bean("suchtool.nacosopenapi.nacosAutomaticLoginRunner")
+    public NacosAutomaticLoginRunner nacosAutomaticLoginRunner() {
+        return new NacosAutomaticLoginRunner();
     }
 
     @Bean("suchtool.nacosopenapi.nacosOpenApiProperty")
