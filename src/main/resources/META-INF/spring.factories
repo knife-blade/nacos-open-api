@@ -1,2 +1,3 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.suchtool.nacosopenapi.configuration.NacosOpenApiConfiguration,\
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.suchtool.nacosopenapi.configuration.NacosOpenApiConfiguration,\
   com.suchtool.nacosopenapi.configuration.RestTemplateConfig
