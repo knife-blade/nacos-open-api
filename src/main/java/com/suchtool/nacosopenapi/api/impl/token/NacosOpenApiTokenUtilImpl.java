@@ -6,6 +6,7 @@ import com.suchtool.nacosopenapi.api.NacosOpenApiUtil;
 import com.suchtool.nacosopenapi.api.bo.NacosLoginBO;
 import com.suchtool.nacosopenapi.api.vo.NacosLoginVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 
 public class NacosOpenApiTokenUtilImpl implements NacosOpenApiTokenUtil {
     @Autowired
@@ -23,7 +24,13 @@ public class NacosOpenApiTokenUtilImpl implements NacosOpenApiTokenUtil {
         nacosLoginBO.setPassword(nacosServerProperty.getPassword());
 
         NacosLoginVO loginVO = nacosOpenApiUtil.login(nacosLoginBO);
+        if (loginVO == null) {
+            throw new RuntimeException("登录返回null");
+        }
 
+        if (!StringUtils.hasText(loginVO.getAccessToken())) {
+            throw new RuntimeException("登录获取的token为空");
+        }
         accessToken = loginVO.getAccessToken();
     }
 

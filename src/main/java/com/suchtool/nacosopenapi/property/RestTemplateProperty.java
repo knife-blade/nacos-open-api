@@ -9,4 +9,6 @@ public class RestTemplateProperty {
     private Duration connectTimeout = Duration.ofSeconds(30);
 
     private Duration readTimeout = Duration.ofSeconds(30);
+
+    private Boolean debug = false;
 }

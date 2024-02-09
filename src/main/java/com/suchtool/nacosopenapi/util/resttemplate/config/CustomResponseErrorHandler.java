@@ -1,4 +1,4 @@
-package com.suchtool.nacosopenapi.configuration.resttemplate;
+package com.suchtool.nacosopenapi.util.resttemplate.config;
 
 import com.suchtool.nacosopenapi.api.NacosOpenApiTokenUtil;
 import com.suchtool.niceutil.util.spring.ApplicationContextHolder;
@@ -16,7 +16,7 @@ public class CustomResponseErrorHandler implements ResponseErrorHandler {
     }
 
     @Override
-    public void handleError(ClientHttpResponse response) throws IOException {
+    public void handleError(ClientHttpResponse response) {
         NacosOpenApiTokenUtil nacosOpenApiTokenUtil = ApplicationContextHolder
                 .getContext().getBean(NacosOpenApiTokenUtil.class);
 

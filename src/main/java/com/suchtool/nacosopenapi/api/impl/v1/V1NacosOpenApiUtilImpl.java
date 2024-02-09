@@ -9,26 +9,26 @@ import com.suchtool.nacosopenapi.api.bo.NacosLoginBO;
 import com.suchtool.nacosopenapi.api.bo.NacosServicePageBO;
 import com.suchtool.nacosopenapi.api.impl.v1.bo.V1NacosAccessBO;
 import com.suchtool.nacosopenapi.api.impl.v1.constant.V1NacosOpenApiUrlEnum;
-import com.suchtool.nacosopenapi.api.impl.v1.vo.*;
+import com.suchtool.nacosopenapi.api.impl.v1.vo.V1NacosCommonVO;
+import com.suchtool.nacosopenapi.api.impl.v1.vo.V1NacosInstanceVO;
+import com.suchtool.nacosopenapi.api.impl.v1.vo.V1NacosLoginVO;
+import com.suchtool.nacosopenapi.api.impl.v1.vo.V1NacosServiceVO;
 import com.suchtool.nacosopenapi.api.vo.NacosInstanceVO;
 import com.suchtool.nacosopenapi.api.vo.NacosLoginVO;
 import com.suchtool.nacosopenapi.api.vo.NacosNamespaceVO;
 import com.suchtool.nacosopenapi.api.vo.NacosServiceVO;
+import com.suchtool.nacosopenapi.util.resttemplate.NacosRestTemplateUtil;
 import com.suchtool.niceutil.util.base.BeanUtil;
 import com.suchtool.niceutil.util.base.JsonUtil;
-import com.suchtool.niceutil.util.web.http.HttpUtil;
+import com.suchtool.niceutil.util.web.http.url.HttpUrlUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class V1NacosOpenApiUtilImpl implements NacosOpenApiUtil {
-
-    @Autowired
-    private RestTemplate restTemplate;
 
     @Autowired
     private NacosDiscoveryProperties nacosServerProperty;
@@ -86,14 +86,14 @@ public class V1NacosOpenApiUtilImpl implements NacosOpenApiUtil {
             paramList.add(v1NacosAccessBO);
         }
 
-        String url = HttpUtil.joinUrl(Arrays.asList(nacosServerProperty.getServerAddr(),
+        String url = HttpUrlUtil.joinUrl(Arrays.asList(nacosServerProperty.getServerAddr(),
                 v1NacosOpenApiUrlEnum.getUrl()));
-        url = HttpUtil.buildUrlWithParams(url, paramList);
+        url = HttpUrlUtil.buildUrl(url, paramList);
 
         if (HttpMethod.GET.equals(v1NacosOpenApiUrlEnum.getHttpMethod())) {
-            return restTemplate.getForObject(url, cls);
+            return NacosRestTemplateUtil.getRestTemplate().getForObject(url, cls);
         } else if (HttpMethod.POST.equals(v1NacosOpenApiUrlEnum.getHttpMethod())) {
-            return restTemplate.postForObject(url, null, cls);
+            return NacosRestTemplateUtil.getRestTemplate().postForObject(url, null, cls);
         } else {
             return null;
         }
