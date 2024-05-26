@@ -16,11 +16,35 @@ Nacos官方API地址：https://nacos.io/docs/v2/guide/user/open-api/
 </dependency>
 ```
 
-### 2.配置Nacos信息
+### 2.配置Nacos服务端信息
 
-待补充
+略
 
 ### 3.使用
 
-待补充
+注入NacosOpenApiUtil，即可使用。例如：
 
+```
+import com.suchtool.nacosopenapi.api.NacosOpenApiUtil;
+import com.suchtool.nacosopenapi.api.bo.NacosServicePageBO;
+import com.suchtool.nacosopenapi.api.vo.NacosServiceVO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+@Component
+public class NacosApplicationInfoServiceImpl {
+    @Autowired
+    private NacosOpenApiUtil nacosOpenApiUtil;
+
+    public void findAllApplications() {
+        NacosServicePageBO nacosServicePageBO = new NacosServicePageBO();
+        nacosServicePageBO.setNamespaceId("namespace1");
+        nacosServicePageBO.setPageNo(1);
+        nacosServicePageBO.setPageSize(100);
+
+        List<NacosServiceVO> serviceVOS = nacosOpenApiUtil.queryService(nacosServicePageBO);
+    }
+}
+```
