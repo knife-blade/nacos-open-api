@@ -18,9 +18,9 @@ import com.suchtool.nacosopenapi.api.vo.NacosLoginVO;
 import com.suchtool.nacosopenapi.api.vo.NacosNamespaceVO;
 import com.suchtool.nacosopenapi.api.vo.NacosServiceVO;
 import com.suchtool.nacosopenapi.util.resttemplate.NacosRestTemplateUtil;
-import com.suchtool.niceutil.util.base.BeanUtil;
-import com.suchtool.niceutil.util.base.JsonUtil;
-import com.suchtool.niceutil.util.web.http.url.HttpUrlUtil;
+import com.suchtool.nicetool.util.base.BeanUtil;
+import com.suchtool.nicetool.util.base.JsonUtil;
+import com.suchtool.nicetool.util.web.http.url.HttpUrlUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 

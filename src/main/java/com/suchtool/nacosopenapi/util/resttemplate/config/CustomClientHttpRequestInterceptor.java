@@ -1,7 +1,7 @@
 package com.suchtool.nacosopenapi.util.resttemplate.config;
 
 import com.suchtool.nacosopenapi.property.RestTemplateProperty;
-import com.suchtool.niceutil.util.spring.ApplicationContextHolder;
+import com.suchtool.nicetool.util.spring.ApplicationContextHolder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;

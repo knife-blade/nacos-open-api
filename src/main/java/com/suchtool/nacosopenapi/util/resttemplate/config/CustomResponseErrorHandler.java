@@ -1,7 +1,7 @@
 package com.suchtool.nacosopenapi.util.resttemplate.config;
 
 import com.suchtool.nacosopenapi.api.NacosOpenApiTokenUtil;
-import com.suchtool.niceutil.util.spring.ApplicationContextHolder;
+import com.suchtool.nicetool.util.spring.ApplicationContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.web.client.ResponseErrorHandler;
