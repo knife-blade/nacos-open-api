@@ -3,7 +3,7 @@ package com.suchtool.nacosopenapi.util.resttemplate;
 import com.suchtool.nacosopenapi.util.resttemplate.config.CustomClientHttpRequestInterceptor;
 import com.suchtool.nacosopenapi.util.resttemplate.config.CustomResponseErrorHandler;
 import com.suchtool.nacosopenapi.property.RestTemplateProperty;
-import com.suchtool.niceutil.util.spring.ApplicationContextHolder;
+import com.suchtool.nicetool.util.spring.ApplicationContextHolder;
 import okhttp3.OkHttpClient;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.client.ClientHttpRequestFactory;
